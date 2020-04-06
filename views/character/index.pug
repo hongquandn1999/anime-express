@@ -1,5 +1,9 @@
 h1 List Character
+a(href="/character/create", title="title")  Add character
+form(action="character/search", method="get")
+    input(type="text", name="q", value=valued)
+    button Search
 ul
-    each val in users
+    each val in characters
         li= val.name
     
