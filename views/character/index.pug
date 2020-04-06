@@ -5,5 +5,8 @@ form(action="character/search", method="get")
     button Search
 ul
     each val in characters
-        li= val.name
+        li
+            span= val.name
+            span &nbsp; 
+            a(href="/character/" + val.id) View 
     
