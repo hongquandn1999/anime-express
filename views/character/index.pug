@@ -1,12 +1,35 @@
-h1 List Character
-a(href="/character/create", title="title")  Add character
-form(action="character/search", method="get")
-    input(type="text", name="q", value=valued)
-    button Search
-ul
-    each val in characters
-        li
-            span= val.name
-            span &nbsp; 
-            a(href="/character/" + val.id) View 
+extends ../layouts/layout
+block content
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light
+        a.navbar-brand(href='/character') Character Infomation
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+        #navbarSupportedContent.collapse.navbar-collapse
+            ul.navbar-nav.mr-auto
+                li.nav-item
+                    a.nav-link(href='/character/create') Add Character
+                li.nav-item
+                    a.nav-link(href='#') Link
+                li.nav-item
+                    a.nav-link(href='#') Link        
+            form.form-inline.my-2.my-lg-0(action="character/search", method="get")
+                input.form-control.mr-sm-2(type='search', placeholder='Search', aria-label='Search', name="q", value=valued)
+                button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
+    table.table
+        thead
+            tr
+            th(scope='col') #
+            th(scope='col') Name Character
+            th(scope='col') Action
+        each val in characters
+            tbody
+                th(scope='row')
+                td= val.name
+                td
+                    a.btn.btn-light(href="/character/" + val.id) View
+                
+                
+            
+
+
     

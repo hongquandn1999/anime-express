@@ -27,6 +27,19 @@ module.exports.createGet = function(req, res) {
 
 module.exports.createPost = function(req, res) {
     req.body.id = shortId.generate();
+    var errors = [];
+    if (!req.body.name) {
+        errors.push("Name is required !!!");
+    }
+    if (!req.body.age) {
+        errors.push("Age is required");
+    }
+    if (errors.length) {
+        res.render("character/create", {
+            error: errors,
+        });
+        return;
+    }
     db.get("character").push(req.body).write();
     res.redirect("/character");
 };
