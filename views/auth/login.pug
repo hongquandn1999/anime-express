@@ -1,0 +1,16 @@
+extends ../layouts/layout
+block content
+    h1.alert.alert-info(role='alert', style='text-align: center') Login
+    if errors
+        each val in errors
+            .alert.alert-danger(role='alert')= val
+        
+    form(method="post")
+        .form-group
+            label(for='exampleInputEmail1') Email
+            input#exampleInputEmail1.form-control(type="text", name="email")
+        .form-group
+            label(for='exampleInputEmail1') Password
+            input#exampleInputEmail1.form-control(type='Password', name="password")  
+        button.btn.btn-primary(type='submit') Login
+            

@@ -8,12 +8,12 @@ block content
     form(action="/character/create", method="post")
         .form-group
             label(for='exampleInputEmail1') Name
-            input#exampleInputEmail1.form-control(type='text', name="name")
+            input#exampleInputEmail1.form-control(type='text', name="name" value=values ? values.name : "")
         .form-group
             label(for='exampleInputEmail1') Age
-            input#exampleInputEmail1.form-control(type='text', name="age")
+            input#exampleInputEmail1.form-control(type='text', name="age" value=values ? values.age : "")
         .form-group
             label(for='exampleInputEmail1') Anime
-            input#exampleInputEmail1.form-control(type='text', name="anime")    
+            input#exampleInputEmail1.form-control(type='text', name="anime" value=values ? values.anime : "")    
         button.btn.btn-primary(type='submit') Create
             
