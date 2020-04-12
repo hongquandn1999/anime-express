@@ -4,7 +4,7 @@ var port = 3000;
 // cookies
 var cookieParser = require("cookie-parser");
 
-app.use(cookieParser());
+app.use(cookieParser("asdasncujashci"));
 // middleware Auth
 var middlewareAuth = require("./middleware/auth.middleware");
 
