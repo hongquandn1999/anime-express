@@ -1,10 +1,14 @@
+require("dotenv").config();
+
+console.log(process.env.SESSION_SECRET);
+
 var express = require("express");
 var app = express();
 var port = 3000;
 // cookies
 var cookieParser = require("cookie-parser");
 
-app.use(cookieParser("asdasncujashci"));
+app.use(cookieParser(process.env.SESSION_SECRET));
 // middleware Auth
 var middlewareAuth = require("./middleware/auth.middleware");
 
